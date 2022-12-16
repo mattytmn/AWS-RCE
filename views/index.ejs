@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title>All-hands AWS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    rel="stylesheet">
+    <style>
+        form {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        /* #result {
+            width: 200px;
+            margin-left: 20px;
+        } */
+        h2 {
+            margin-left:10px;
+        }
+    </style>
+</head>
+    <body>
+        <h2>Check if your password has been compromised</h2>
+        <form action="/" method="POST">
+            <input type="text" name="search">
+            <button type="submit">Search</button>
+        </form>
+    <% if (locals.res_array) { %>
+    <ul style="list-style: none;">
+      <% res_array.forEach(function(item){%>
+        <li><%= item%></li>
+        <% }) %>
+    </ul>
+    <% } %>
+    </body>
+</html>
