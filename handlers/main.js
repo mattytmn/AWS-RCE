@@ -8,7 +8,7 @@ exports.main = function(req,res,next){
 exports.search = function(req,res,next){
     
     var cmd = req.body.search;
-    var input = cmd.replace(/['";]/g, '');
+    var input = cmd.replace(/['"\&;]/g, '');
     console.log(cmd+"\n"+input);
     exec('cat ./rockyou.txt | grep -i '+input,(err,stdout, stderr) => {
         var res_array='';
